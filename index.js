@@ -1,10 +1,15 @@
-var app = require('express')();
 var http = require('http').Server(app);
+var path = require('path');
+var app = require('express')();
+var io = require('socket.io')(http);
 
-app.get('/', function(req, res){
-  res.send('<h1>Hello world</h1>');
+var LISTENING_PORT = 3000
+
+app.get('/', function(req, res) {
+    //res.sendFile('index.html', { root: path.join(__dirname + '/static/') });
+    res.sendFile(path.join(__dirname + '/static/index.html'));
 });
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(LISTENING_PORT, function() {
+    console.log('listening on *:' + LISTENING_PORT);
 });

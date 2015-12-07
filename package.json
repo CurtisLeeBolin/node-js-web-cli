@@ -2,7 +2,8 @@
   "name": "node-js-web-cli",
   "version": "0.0.0",
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "socket.io": "*"
   },
   "description": "",
   "main": "index.js",
